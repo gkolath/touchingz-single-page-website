@@ -416,6 +416,27 @@ footer .bottom{border-top-color:var(--line)}
 .kit-batch p{margin:0;color:rgba(255,255,255,.85)}
 @media (max-width:900px){.kit-points{grid-template-columns:1fr 1fr}.kit-points div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}.kit-points div:nth-child(2n){border-right:0!important}.kit-points div:nth-last-child(-n+2){border-bottom:0!important}.kit-batch{grid-template-columns:1fr}}
 @media (max-width:560px){.kit-photos{grid-template-columns:1fr}.kit-photos figure.wide{grid-column:span 1}.kit-photos img{aspect-ratio:4/3}.kit-points{grid-template-columns:1fr}.kit-points div:nth-child(n){border-right:0!important;border-bottom:1px solid var(--line)!important}.kit-points div:nth-child(n):last-child{border-bottom:0!important}}
+
+/* Menu: three order menus + shared item list */
+.prod-grid.menus .prod{grid-column:span 2}
+.prod .body .ticks.mini{gap:8px;font-size:13.5px;color:var(--fg);margin-top:4px}
+.prod .body .ticks.mini li{grid-template-columns:18px 1fr;gap:10px}
+.prod .body .ticks.mini li::before{width:16px;height:16px;margin-top:4px;background-size:10px}
+.prod .more{margin-top:6px;display:inline-flex;align-items:center;gap:8px;font:700 13px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--leaf-deep);text-decoration:none}
+.prod .more:hover{color:var(--leaf)}
+.items{margin-top:48px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:32px}
+.items-head{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between;margin-bottom:22px}
+.items-head h3{font-size:22px;font-weight:800}
+.items-head p{color:var(--muted);font-size:14px;max-width:60ch}
+.item-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px}
+.item-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);font:600 14.5px/1.3 var(--display);min-width:0}
+.fz{flex:none;display:inline-block;background:var(--bg-soft);color:var(--leaf-deep);border:1px solid var(--line);border-radius:999px;font:700 10.5px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;padding:5px 8px}
+.items-foot{margin-top:20px;color:var(--muted);font-size:13px}
+@media (max-width:1000px){.item-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.prod-grid.menus{grid-template-columns:1fr 1fr}.prod-grid.menus .prod{grid-column:span 1}.prod-grid.menus .prod:nth-child(3){grid-column:span 2}}
+@media (max-width:700px){.item-list{grid-template-columns:1fr 1fr}.items{padding:24px}}
+@media (max-width:600px){.prod-grid.menus{grid-template-columns:1fr}.prod-grid.menus .prod:nth-child(3){grid-column:span 1}}
+@media (max-width:420px){.item-list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -478,7 +499,7 @@ footer .bottom{border-top-color:var(--line)}
     <a class="logo" href="#home" aria-label="Touchingz Food Pvt. Ltd, back to top"><img data-img="logo.png" alt="Touchingz Food Pvt. Ltd. Clean, Pure, Crafted" width="435" height="201"></a>
     <nav class="main" id="nav" aria-label="Main">
       <a href="#about">About</a>
-      <a href="#products">Products</a>
+      <a href="#menu">Menu</a>
       <a href="#serve">Who we serve</a>
       <a href="#meals">Office meals</a>
       <a href="#quality">Quality</a>
@@ -515,7 +536,7 @@ footer .bottom{border-top-color:var(--line)}
       </div>
       <div class="ctas">
         <a class="btn" href="#contact">Request a sample tasting <svg class="ico"><use href="#i-arrow"/></svg></a>
-        <a class="btn ghost" href="#products">Explore the menu</a>
+        <a class="btn ghost" href="#menu">Explore the menu</a>
       </div>
     </div>
   </div>
@@ -563,34 +584,40 @@ footer .bottom{border-top-color:var(--line)}
   </div>
 </section>
 
-<section class="band soft" id="products">
+<section class="band soft" id="menu">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow"><svg class="ico"><use href="#i-leaf"/></svg>Product architecture</span>
-      <h2>One Brand. Multiple Food Missions.</h2>
-      <p>A clear portfolio that serves daily, occasional and retail demand.</p>
+      <span class="eyebrow"><svg class="ico"><use href="#i-leaf"/></svg>Menu</span>
+      <h2>Three menus, one kitchen</h2>
+      <p>Pick the menu that fits how you order. Every menu draws on the same range of 26 Kerala tea-time snacks, made fresh each day, with many also available frozen. Tell us what you need and we'll send you the menu and rates that suit you.</p>
     </div>
-    <div class="prod-grid">
+    <div class="prod-grid menus">
       <article class="prod">
-        <figure><img data-img="teatime.jpg" alt="Cutlets, samosas, banana fritters and chai on a banana leaf"><span class="num"><svg class="ico"><use href="#i-cup"/></svg></span></figure>
-        <div class="body"><h3>Tea-Time Classics</h3><p>Cutlets, samosas, banana fritters, fried rolls, ela ada, unnakkaya and Kerala-style quick snacks.</p></div>
+        <figure><img data-img="teatime.jpg" alt="Kerala tea-time snacks with chai for café counters"><span class="num"><svg class="ico"><use href="#i-cafe"/></svg></span></figure>
+        <div class="body"><h3>Regular Repeat Café</h3><p>For cafés that restock every day.</p>
+          <ul class="ticks mini"><li>A fixed base order for weekdays and another for weekends</li><li>Daily delivery between 7:30 AM and 1:00 PM</li><li>Add to the next day's order on WhatsApp by 5:00 PM</li></ul>
+          <a class="more" href="#contact">Ask for this menu <svg class="ico"><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="prod">
-        <figure><img data-img="platter.jpg" alt="Spread of quick bites, meal boxes and sandwiches"><span class="num"><svg class="ico"><use href="#i-bolt"/></svg></span></figure>
-        <div class="body"><h3>Quick Bites</h3><p>Grab-and-go items for cafés, office counters, events and evening demand spikes.</p></div>
+        <figure><img data-img="office.jpg" alt="Office team picking up food from a buffet"><span class="num"><svg class="ico"><use href="#i-office"/></svg></span></figure>
+        <div class="body"><h3>Regular Repeat Corporate / Café</h3><p>For office pantries and cafés on a standing order.</p>
+          <ul class="ticks mini"><li>A fixed base order for weekdays and another for weekends</li><li>Delivery time agreed with you in advance</li><li>Add to the next day's order on WhatsApp by 5:00 PM</li></ul>
+          <a class="more" href="#contact">Ask for this menu <svg class="ico"><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="prod">
-        <figure><img data-img="sandwich.jpg" alt="Fresh sandwiches, wraps and burgers"><span class="num"><svg class="ico"><use href="#i-sandwich"/></svg></span></figure>
-        <div class="body"><h3>Sandwiches</h3><p>Fresh, filled and portion-controlled sandwiches for cafés, meetings and corporate orders.</p></div>
+        <figure><img data-img="platter.jpg" alt="Platter of snacks and sandwiches for an event"><span class="num"><svg class="ico"><use href="#i-party"/></svg></span></figure>
+        <div class="body"><h3>Single Catering Order</h3><p>For one-off events, parties and meetings.</p>
+          <ul class="ticks mini"><li>Order at least 24 hours ahead</li><li>Delivery time fixed when you order</li><li>Prepaid orders</li></ul>
+          <a class="more" href="#contact">Ask for this menu <svg class="ico"><use href="#i-arrow"/></svg></a></div>
       </article>
-      <article class="prod">
-        <figure><img data-img="office.jpg" alt="Office team serving themselves from a buffet of meal boxes"><span class="num"><svg class="ico"><use href="#i-tray"/></svg></span></figure>
-        <div class="body"><h3>Curated Meals</h3><p>Office lunch boxes, team meals, party meal trays and balanced daily menus.</p></div>
-      </article>
-      <article class="prod">
-        <figure><img data-img="frozen.jpg" alt="Touchingz branded food pack with fresh tomatoes, coconut and herbs"><span class="num"><svg class="ico"><use href="#i-snow"/></svg></span></figure>
-        <div class="body"><h3>Frozen / Chilled Line</h3><p>Scalable packaged favourites for retail counters and future e-commerce.</p></div>
-      </article>
+    </div>
+    <div class="items">
+      <div class="items-head">
+        <h3>What's on every menu</h3>
+        <p><span class="fz">Frozen too</span> marks items also supplied frozen (5-day shelf life, kept frozen). Fresh items are made daily for same-day use.</p>
+      </div>
+      <ul class="item-list"><li>Banana Lollipop<span class="fz" title="Also available frozen">Frozen too</span></li><li>Bread Pocket Chicken</li><li>Bread Pocket Veg</li><li>Chicken Ada</li><li>Chicken Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Kalmas</li><li>Chicken Lollipop<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Samosa<span class="fz" title="Also available frozen">Frozen too</span></li><li>Egg Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Ela Ada<span class="fz" title="Also available frozen">Frozen too</span></li><li>Elanchi</li><li>Kilikkood</li><li>Kozhukkatta<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Samosa<span class="fz" title="Also available frozen">Frozen too</span></li><li>Parippuvada</li><li>Pazham Nirachadhu</li><li>Pazhampori (large)</li><li>Pazhampori (small)</li><li>Sugiyan</li><li>Ullivada</li><li>Unnakkaya<span class="fz" title="Also available frozen">Frozen too</span></li><li>Veg Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Veg Roll<span class="fz" title="Also available frozen">Frozen too</span></li></ul>
+      <p class="items-foot">Prepared in an ISO-standard, FSSAI-compliant facility with no preservatives, emulsifiers or artificial additives. Minimum quantities and rates are shared with each menu.</p>
     </div>
   </div>
 </section>
@@ -994,7 +1021,7 @@ footer .bottom{border-top-color:var(--line)}
     </div>
     <div>
       <h4>Explore</h4>
-      <ul><li><a href="#about">About</a></li><li><a href="#products">Products</a></li><li><a href="#serve">Who we serve</a></li><li><a href="#meals">Office meals</a></li><li><a href="#quality">Quality</a></li><li><a href="#kitchen">Our Kitchen</a></li></ul>
+      <ul><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#serve">Who we serve</a></li><li><a href="#meals">Office meals</a></li><li><a href="#quality">Quality</a></li><li><a href="#kitchen">Our Kitchen</a></li></ul>
     </div>
     <div>
       <h4>Work with us</h4>
