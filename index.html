@@ -397,6 +397,9 @@ footer{background:var(--bg-soft);color:var(--muted);border-top:1px solid var(--l
 footer h4{color:var(--fg)}
 footer .bottom{border-top-color:var(--line)}
 .flogo{background:transparent;padding:0}
+.addr{font-style:normal;margin-top:4px;line-height:1.55;font-size:14px}
+.map-link{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font:700 12px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--leaf-deep);text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 12px}
+.map-link:hover{border-color:var(--leaf);color:var(--leaf)}
 </style>
 </head>
 <body>
@@ -439,6 +442,7 @@ footer .bottom{border-top-color:var(--line)}
     <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></symbol>
     <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></symbol>
     <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
     <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   </defs>
@@ -886,7 +890,13 @@ footer .bottom{border-top-color:var(--line)}
         <div><b>Email</b><small>General enquiries</small>
           <div class="val"><span>touchingzfoods@gmail.com</span><button class="copy-btn" data-copy="touchingzfoods@gmail.com" type="button">Copy</button></div></div>
       </div>
-      <p class="gap-note">Kitchen address, service area and business hours to be added.</p>
+      <div class="person">
+        <span class="ic"><svg class="ico"><use href="#i-pin"/></svg></span>
+        <div><b>Our kitchen</b><small>Location</small>
+          <address class="addr">No. 34/1, TM Anjinappa Road, Narayanapura, Kothanur, Bangalore 560077, Karnataka</address>
+          <a class="map-link" href="https://share.google/ILhuxtzB0xv908cGM" target="_blank" rel="noopener">Open in Google Maps <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <p class="gap-note">Service area and business hours to be added.</p>
     </aside>
 
     <form class="form" id="enquiry" novalidate>
