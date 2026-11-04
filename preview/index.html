@@ -440,6 +440,25 @@ footer .bottom{border-top-color:var(--line)}
 .addr{font-style:normal;margin-top:4px;line-height:1.55;font-size:14px}
 .map-link{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font:700 12px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--leaf-deep);text-decoration:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 12px}
 .map-link:hover{border-color:var(--leaf);color:var(--leaf)}
+
+.badge.iso{align-items:center;flex-wrap:nowrap;gap:18px;padding:18px 22px}
+.badge.iso strong{display:block;font:800 clamp(18px,2vw,22px)/1.25 var(--display)}
+.badge.iso small{display:block;margin-top:4px;font-size:13px}
+.iso-seal{width:84px;height:84px;flex:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+@media (max-width:420px){.iso-seal{width:68px;height:68px}}
+.fz{display:inline-flex;align-items:center;gap:5px;background:var(--leaf);color:#fff;border:0}
+.fz .ico{font-size:12px;stroke-width:2}
+.items-head p a{color:var(--leaf-deep);font-weight:600}
+.why-frozen{display:grid;gap:14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px}
+.why-frozen h3,.fz-title{font-size:17px;font-weight:800}
+.wf{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.wf .ic{width:40px;height:40px;border-radius:12px;background:var(--surface);color:var(--leaf);display:grid;place-items:center;font-size:20px}
+.wf b{font-family:var(--display);font-size:15px}
+.wf p{color:var(--muted);font-size:14px;line-height:1.55}
+.fz-title{margin-bottom:10px}
+.fz-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.fz-list li{border:1.5px solid var(--leaf);color:var(--leaf-deep);background:var(--surface);border-radius:999px;padding:7px 13px;font:600 13px/1 var(--display)}
+#frozen .split .media .tag .ico{color:var(--leaf);vertical-align:-2px}
 </style>
 </head>
 <body>
@@ -504,6 +523,7 @@ footer .bottom{border-top-color:var(--line)}
     <nav class="main" id="nav" aria-label="Main">
       <a href="#about">About</a>
       <a href="#menu">Menu</a>
+      <a href="#frozen">Frozen range</a>
       <a href="#serve">Who we serve</a>
       <a href="#quality">Quality</a>
       <a href="#kitchen">Our Kitchen</a>
@@ -565,7 +585,16 @@ footer .bottom{border-top-color:var(--line)}
   <div class="wrap about">
     <div class="collage">
       <img class="a" data-img="kitchen.jpg" alt="Touchingz chef preparing food in a clean, hygiene-led kitchen">
-      <div class="badge">ISO certified<small>HACCP-aligned and FSSAI-guided production approach</small></div>
+      <div class="badge iso"><svg class="iso-seal" viewBox="0 0 100 100" role="img" aria-label="ISO 9001:2015 certified">
+        <defs><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc84"/><stop offset=".5" stop-color="#d4a437"/><stop offset="1" stop-color="#a87a1c"/></linearGradient>
+        <path id="arcT" d="M20 50a30 30 0 0 1 60 0"/><path id="arcB" d="M16 50a34 34 0 0 0 68 0"/></defs>
+        <polygon points="98.0,50.0 93.6,55.7 96.4,62.4 90.7,66.8 91.6,74.0 84.9,76.8 83.9,83.9 76.8,84.9 74.0,91.6 66.8,90.7 62.4,96.4 55.7,93.6 50.0,98.0 44.3,93.6 37.6,96.4 33.2,90.7 26.0,91.6 23.2,84.9 16.1,83.9 15.1,76.8 8.4,74.0 9.3,66.8 3.6,62.4 6.4,55.7 2.0,50.0 6.4,44.3 3.6,37.6 9.3,33.2 8.4,26.0 15.1,23.2 16.1,16.1 23.2,15.1 26.0,8.4 33.2,9.3 37.6,3.6 44.3,6.4 50.0,2.0 55.7,6.4 62.4,3.6 66.8,9.3 74.0,8.4 76.8,15.1 83.9,16.1 84.9,23.2 91.6,26.0 90.7,33.2 96.4,37.6 93.6,44.3" fill="url(#gold)"/>
+        <circle cx="50" cy="50" r="39" fill="#1d2a22"/><circle cx="50" cy="50" r="36" fill="none" stroke="url(#gold)" stroke-width="1.2"/>
+        <text font-family="Montserrat,sans-serif" font-weight="800" font-size="9" letter-spacing="1.5" fill="#f2d27a"><textPath href="#arcT" startOffset="50%" text-anchor="middle">CERTIFIED</textPath></text>
+        <text font-family="Montserrat,sans-serif" font-weight="800" font-size="9" letter-spacing="1.5" fill="#f2d27a"><textPath href="#arcB" startOffset="50%" text-anchor="middle">CERTIFIED</textPath></text>
+        <rect x="6" y="41" width="88" height="18" rx="3" fill="url(#gold)"/>
+        <text x="50" y="53.6" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="10.5" fill="#1d2a22">ISO 9001:2015</text>
+      </svg><div><strong>ISO 9001:2015 certified</strong><small>HACCP-aligned and FSSAI-guided production approach</small></div></div>
     </div>
     <div class="about-copy">
       <span class="eyebrow"><svg class="ico"><use href="#i-leaf"/></svg>What Touchingz does</span>
@@ -574,7 +603,7 @@ footer .bottom{border-top-color:var(--line)}
       <ul class="ticks">
         <li>Fresh and clean-label production for cafés, restaurants, hotels and office clients.</li>
         <li>Dependable supply for parties, events, retail counters and corporate food programs.</li>
-        <li>ISO certified, HACCP-aligned and FSSAI-guided production approach.</li>
+        <li>ISO 9001:2015 certified, HACCP-aligned and FSSAI-guided production approach.</li>
         <li>Hybrid model: cloud kitchen innovation + packaged food scalability.</li>
       </ul>
       <div class="dna">
@@ -598,7 +627,7 @@ footer .bottom{border-top-color:var(--line)}
       <article class="prod">
         <figure><img data-img="teatime.jpg" alt="Kerala tea-time snacks with chai for café counters"><span class="num"><svg class="ico"><use href="#i-cafe"/></svg></span></figure>
         <div class="body"><h3>Regular Repeat Café</h3><p>For cafés that restock every day.</p>
-          <ul class="ticks mini"><li>A fixed base order for weekdays and another for weekends</li><li>Daily delivery between 7:30 AM and 1:00 PM</li><li>Add to the next day's order on WhatsApp by 5:00 PM</li></ul>
+          <ul class="ticks mini"><li>A fixed base order for weekdays and another for weekends</li><li>Morning delivery from 7:30 AM</li><li>Afternoon delivery from 2:30 PM</li><li>Add to the next day's order on WhatsApp by 5:00 PM</li></ul>
           <a class="more" href="#contact">Ask for this menu <svg class="ico"><use href="#i-arrow"/></svg></a></div>
       </article>
       <article class="prod">
@@ -617,10 +646,33 @@ footer .bottom{border-top-color:var(--line)}
     <div class="items">
       <div class="items-head">
         <h3>What's on every menu</h3>
-        <p><span class="fz">Frozen too</span> marks items also supplied frozen (5-day shelf life, kept frozen). Fresh items are made daily for same-day use.</p>
+        <p><span class="fz"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span> marks items also supplied frozen, with a 3-month shelf life when kept frozen. Fresh items are made daily for same-day use. <a href="#frozen">See the frozen range</a></p>
       </div>
-      <ul class="item-list"><li>Banana Lollipop<span class="fz" title="Also available frozen">Frozen too</span></li><li>Bread Pocket Chicken</li><li>Bread Pocket Veg</li><li>Chicken Ada</li><li>Chicken Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Kalmas</li><li>Chicken Lollipop<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Chicken Samosa<span class="fz" title="Also available frozen">Frozen too</span></li><li>Egg Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Ela Ada<span class="fz" title="Also available frozen">Frozen too</span></li><li>Elanchi</li><li>Kilikkood</li><li>Kozhukkatta<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Roll<span class="fz" title="Also available frozen">Frozen too</span></li><li>Meat Samosa<span class="fz" title="Also available frozen">Frozen too</span></li><li>Parippuvada</li><li>Pazham Nirachadhu</li><li>Pazhampori (large)</li><li>Pazhampori (small)</li><li>Sugiyan</li><li>Ullivada</li><li>Unnakkaya<span class="fz" title="Also available frozen">Frozen too</span></li><li>Veg Cutlet<span class="fz" title="Also available frozen">Frozen too</span></li><li>Veg Roll<span class="fz" title="Also available frozen">Frozen too</span></li></ul>
+      <ul class="item-list"><li>Banana Lollipop<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Bread Pocket Chicken</li><li>Bread Pocket Veg</li><li>Chicken Ada</li><li>Chicken Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Kalmas</li><li>Chicken Lollipop<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Samosa<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Egg Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Ela Ada<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Elanchi</li><li>Kilikkood</li><li>Kozhukkatta<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Samosa<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Parippuvada</li><li>Pazham Nirachadhu</li><li>Pazhampori (large)</li><li>Pazhampori (small)</li><li>Sugiyan</li><li>Ullivada</li><li>Unnakkaya<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Veg Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Veg Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li></ul>
       <p class="items-foot">Prepared in an ISO-standard, FSSAI-compliant facility with no preservatives, emulsifiers or artificial additives. Minimum quantities and rates are shared with each menu.</p>
+    </div>
+  </div>
+</section>
+<section class="band" id="frozen">
+  <div class="wrap">
+    <div class="split">
+      <div class="media">
+        <img data-img="frozen.jpg" alt="Touchingz food pack with fresh tomatoes, coconut and herbs">
+        <div class="tag"><svg class="ico"><use href="#i-snow"/></svg> <b>3-month shelf life</b> when kept frozen</div>
+      </div>
+      <div class="copy">
+        <span class="eyebrow"><svg class="ico"><use href="#i-leaf"/></svg>Frozen range</span>
+        <h2>Kerala favourites, ready when you are</h2>
+        <p>14 of our snacks are also supplied frozen, so you can keep stock on hand and serve them whenever you need, without daily deliveries.</p>
+        <div class="why-frozen">
+          <h3>Why choose our frozen items</h3>
+          <div class="wf"><span class="ic"><svg class="ico"><use href="#i-label"/></svg></span><div><b>Clean-label and preservative-free</b><p>Blast-freezing keeps the authentic texture, with no preservatives needed.</p></div></div>
+          <div class="wf"><span class="ic"><svg class="ico"><use href="#i-snow"/></svg></span><div><b>Extended shelf life</b><p>Up to 3 months frozen, which cuts kitchen wastage for retail and hospitality partners.</p></div></div>
+          <div class="wf"><span class="ic"><svg class="ico"><use href="#i-check"/></svg></span><div><b>Consistent batch quality</b><p>ISO-guided production keeps sizing and taste uniform from batch to batch.</p></div></div>
+        </div>
+        <div><h3 class="fz-title">Available frozen</h3><ul class="fz-list"><li>Banana Lollipop</li><li>Chicken Cutlet</li><li>Chicken Lollipop</li><li>Chicken Roll</li><li>Chicken Samosa</li><li>Egg Roll</li><li>Ela Ada</li><li>Kozhukkatta</li><li>Meat Cutlet</li><li>Meat Roll</li><li>Meat Samosa</li><li>Unnakkaya</li><li>Veg Cutlet</li><li>Veg Roll</li></ul></div>
+        <a class="btn" href="#contact" style="justify-self:start">Ask about frozen supply</a>
+      </div>
     </div>
   </div>
 </section>
@@ -720,7 +772,7 @@ footer .bottom{border-top-color:var(--line)}
         <div class="sec-head" style="margin-bottom:24px">
           <span class="eyebrow"><svg class="ico"><use href="#i-leaf"/></svg>Quality</span>
           <h2 style="font-size:clamp(24px,2.8vw,34px)">Food Safety Is Not a Department. It Is the System.</h2>
-          <p>ISO certified, HACCP-aligned and FSSAI-guided operations create trust at scale.</p>
+          <p>ISO 9001:2015 certified, HACCP-aligned and FSSAI-guided operations create trust at scale.</p>
         </div>
         <div class="safety-list">
           <details open><summary><svg class="ico"><use href="#i-inbox"/></svg>Ingredient Intake</summary><p>Supplier checks, expiry review, freshness inspection and rejection control.</p></details>
@@ -730,7 +782,7 @@ footer .bottom{border-top-color:var(--line)}
           <details><summary><svg class="ico"><use href="#i-trace"/></svg>Traceability</summary><p>Batch records, consumption logs, complaints handling and corrective action.</p></details>
         </div>
         <div class="certs">
-          <span><svg class="ico"><use href="#i-shield"/></svg>ISO certified</span>
+          <span><svg class="ico"><use href="#i-shield"/></svg>ISO 9001:2015 certified</span>
           <span><svg class="ico"><use href="#i-shield"/></svg>HACCP-aligned</span>
           <span><svg class="ico"><use href="#i-shield"/></svg>FSSAI-guided</span>
         </div>
@@ -912,7 +964,7 @@ footer .bottom{border-top-color:var(--line)}
       <h3>For enquiries, proposals or sample tastings</h3>
       <div class="person">
         <span class="ic"><svg class="ico"><use href="#i-user"/></svg></span>
-        <div><b>Ms Alponse K John</b><small>Co-Founder &amp; Director · Phone</small>
+        <div><b>Ms Alphonse K John</b><small>Co-Founder &amp; Director · Phone</small>
           <div class="val"><span>+91 97407 67516</span><button class="copy-btn" data-copy="+919740767516" type="button">Copy</button></div></div>
       </div>
       <div class="person">
@@ -989,7 +1041,7 @@ footer .bottom{border-top-color:var(--line)}
     </div>
     <div>
       <h4>Explore</h4>
-      <ul><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#serve">Who we serve</a></li><li><a href="#quality">Quality</a></li><li><a href="#kitchen">Our Kitchen</a></li></ul>
+      <ul><li><a href="#about">About</a></li><li><a href="#menu">Menu</a></li><li><a href="#frozen">Frozen range</a></li><li><a href="#serve">Who we serve</a></li><li><a href="#quality">Quality</a></li><li><a href="#kitchen">Our Kitchen</a></li></ul>
     </div>
     <div>
       <h4>Work with us</h4>
@@ -999,12 +1051,12 @@ footer .bottom{border-top-color:var(--line)}
       <h4>Contact</h4>
       <ul>
         <li>touchingzfoods@gmail.com</li>
-        <li>+91 97407 67516 (Ms Alponse K John)</li>
+        <li>+91 97407 67516 (Ms Alphonse K John)</li>
         <li>WhatsApp +91 99800 00889 (Mr Rojin G Koshy)</li>
       </ul>
     </div>
   </div>
-  <div class="bottom"><div class="wrap"><span>© <span id="yr">2026</span> Touchingz Food Pvt. Ltd. All rights reserved.</span><span>ISO certified · HACCP-aligned · FSSAI-guided</span></div></div>
+  <div class="bottom"><div class="wrap"><span>© <span id="yr">2026</span> Touchingz Food Pvt. Ltd. All rights reserved.</span><span>ISO 9001:2015 certified · HACCP-aligned · FSSAI-guided</span></div></div>
 </footer>
 
 <button class="totop" id="totop" aria-label="Back to top"><svg class="ico"><use href="#i-up"/></svg></button>
