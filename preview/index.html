@@ -15,7 +15,7 @@
   --leaf:#3fa75e;        /* logo green */
   --leaf-deep:#2c8a49;   /* hover / text-on-light green */
   --forest:#163a25;      /* dark bands, footer */
-  --turmeric:#f7a928;    /* small warm accent (badges, stars of the hero eyebrow) */
+  --turmeric:#2c8a49;    /* accent: deep brand green (was orange) */
   --bg:#ffffff;
   --bg-soft:#f4faf5;
   --surface:#ffffff;
@@ -131,7 +131,7 @@ header .btn{padding:13px 22px}
 .dna div{border-top:3px solid var(--leaf);padding-top:12px}
 .dna b{font:800 14px/1 var(--display);letter-spacing:.18em;color:var(--leaf)}
 .dna p{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55}
-.promise{border-left:4px solid var(--turmeric);padding:6px 0 6px 18px;font:600 16px/1.55 var(--display);color:var(--fg)}
+.promise{border-left:4px solid var(--leaf);padding:6px 0 6px 18px;font:600 16px/1.55 var(--display);color:var(--fg)}
 @media (max-width:900px){.about{grid-template-columns:1fr}.collage{max-width:560px}}
 @media (max-width:520px){.dna{grid-template-columns:1fr}}
 
@@ -199,7 +199,7 @@ header .btn{padding:13px 22px}
 .week-copy{display:grid;gap:20px}
 .week-copy h2{font-size:clamp(26px,3.2vw,38px);font-weight:800}
 .week-copy p{color:var(--muted)}
-.sample{display:inline-block;justify-self:start;background:var(--turmeric);color:#3a2a05;font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+.sample{display:inline-block;justify-self:start;background:var(--turmeric);color:#fff;font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
 .menu{background:var(--surface);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
 .menu ol{list-style:none;margin:0;padding:0}
 .menu li{display:grid;grid-template-columns:86px 1fr;align-items:center;border-bottom:1px solid var(--line)}
@@ -216,7 +216,7 @@ header .btn{padding:13px 22px}
 .process{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:72px;counter-reset:step}
 .step{position:relative;text-align:center;display:grid;gap:10px;justify-items:center;padding:0 8px}
 .step .circle{width:96px;height:96px;border-radius:50%;background:var(--surface);border:2px dashed var(--leaf);display:grid;place-items:center;color:var(--leaf);font-size:38px;position:relative}
-.step .circle::after{counter-increment:step;content:counter(step,decimal-leading-zero);position:absolute;top:-6px;right:-6px;width:34px;height:34px;border-radius:50%;background:var(--turmeric);color:#3a2a05;font:800 12px/34px var(--display)}
+.step .circle::after{counter-increment:step;content:counter(step,decimal-leading-zero);position:absolute;top:-6px;right:-6px;width:34px;height:34px;border-radius:50%;background:var(--turmeric);color:#fff;font:800 12px/34px var(--display)}
 .step:not(:last-child)::before{content:"";position:absolute;top:48px;left:calc(50% + 60px);right:calc(-50% + 60px);border-top:2px dashed var(--line)}
 .step h3{font-size:18px;font-weight:700;margin-top:8px}
 .step p{color:var(--muted);font-size:14px;max-width:30ch}
@@ -458,6 +458,35 @@ footer .bottom{border-top-color:var(--line)}
 .fz-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .fz-list li{border:1.5px solid var(--leaf);color:var(--leaf-deep);background:var(--surface);border-radius:999px;padding:7px 13px;font:600 13px/1 var(--display)}
 #frozen .split .media .tag .ico{color:var(--leaf);vertical-align:-2px}
+
+/* round 3 */
+.dd{position:relative;display:flex}
+.dd > a::after{content:"";width:6px;height:6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 8px;display:inline-block;opacity:.6}
+.dd .sub{position:absolute;top:100%;left:0;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;display:none;z-index:60}
+.dd .sub a{display:block;padding:11px 12px;border-radius:8px}
+.dd .sub a:hover{background:var(--bg-soft)}
+.dd:hover .sub,.dd:focus-within .sub{display:grid}
+@media (max-width:820px){
+  nav.main.open .dd{display:grid}
+  nav.main.open .dd > a::after{display:none}
+  nav.main.open .dd .sub{position:static;display:grid;border:0;box-shadow:none;padding:0 0 0 14px;min-width:0;background:transparent}
+  nav.main.open .dd .sub a{font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);border-radius:0}
+  nav.main.open .dd .sub a:first-child{display:none}
+}
+@media (min-width:901px){
+  .about{align-items:stretch}
+  .collage{grid-template-rows:1fr auto}
+  .collage img{height:100%;min-height:360px;object-fit:cover}
+  .split{align-items:stretch}
+  .split .media{display:flex}
+  .split .media img{aspect-ratio:auto;height:100%;min-height:420px;object-fit:cover}
+}
+.prod-grid.menus .prod .body{flex:1;display:flex;flex-direction:column;gap:10px}
+.prod-grid.menus .prod .more{margin-top:auto;padding-top:8px}
+@media (min-width:901px){.prod-grid.menus h3{min-height:2.4em}}
+.fz{width:24px;height:24px;padding:0;justify-content:center;border-radius:50%;letter-spacing:0;vertical-align:middle}
+.fz .ico{font-size:14px}
+.items-head p b{color:var(--fg);font-family:var(--display)}
 </style>
 </head>
 <body>
@@ -520,12 +549,9 @@ footer .bottom{border-top-color:var(--line)}
   <div class="wrap">
     <a class="logo" href="#home" aria-label="Touchingz Food Pvt. Ltd, back to top"><img data-img="logo.png" alt="Touchingz Food Pvt. Ltd. Clean, Pure, Crafted" width="752" height="341"></a>
     <nav class="main" id="nav" aria-label="Main">
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#frozen">Frozen range</a>
+      <div class="dd"><a href="#about">About</a><div class="sub"><a href="#about">Who we are</a><a href="#quality">Quality</a><a href="#kitchen">Our Kitchen</a></div></div>
+      <div class="dd"><a href="#menu">Menu</a><div class="sub"><a href="#menu">Our menus</a><a href="#frozen">Frozen range</a></div></div>
       <a href="#serve">Who we serve</a>
-      <a href="#quality">Quality</a>
-      <a href="#kitchen">Our Kitchen</a>
       <a href="#partner">Partner with us</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -645,9 +671,9 @@ footer .bottom{border-top-color:var(--line)}
     <div class="items">
       <div class="items-head">
         <h3>What's on every menu</h3>
-        <p><span class="fz"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span> marks items also supplied frozen, with a 3-month shelf life when kept frozen. Fresh items are made daily for same-day use. <a href="#frozen">See the frozen range</a></p>
+        <p><span class="fz" aria-hidden="true"><svg class="ico"><use href="#i-snow"/></svg></span> <b>Frozen food</b>: also supplied frozen, with a 3-month shelf life when kept frozen. Fresh items are made daily for same-day use. <a href="#frozen">See the frozen range</a></p>
       </div>
-      <ul class="item-list"><li>Banana Lollipop<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Bread Pocket Chicken</li><li>Bread Pocket Veg</li><li>Chicken Ada</li><li>Chicken Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Kalmas</li><li>Chicken Lollipop<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Chicken Samosa<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Egg Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Ela Ada<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Elanchi</li><li>Kilikkood</li><li>Kozhukkatta<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Meat Samosa<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Parippuvada</li><li>Pazham Nirachadhu</li><li>Pazhampori (large)</li><li>Pazhampori (small)</li><li>Sugiyan</li><li>Ullivada</li><li>Unnakkaya<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Veg Cutlet<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li><li>Veg Roll<span class="fz" title="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg>Frozen too</span></li></ul>
+      <ul class="item-list"><li>Banana Lollipop<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Bread Pocket Chicken</li><li>Bread Pocket Veg</li><li>Chicken Ada</li><li>Chicken Cutlet<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Chicken Kalmas</li><li>Chicken Lollipop<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Chicken Roll<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Chicken Samosa<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Egg Roll<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Ela Ada<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Elanchi</li><li>Kilikkood</li><li>Kozhukkatta<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Meat Cutlet<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Meat Roll<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Meat Samosa<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Parippuvada</li><li>Pazham Nirachadhu</li><li>Pazhampori (large)</li><li>Pazhampori (small)</li><li>Sugiyan</li><li>Ullivada</li><li>Unnakkaya<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Veg Cutlet<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li><li>Veg Roll<span class="fz" title="Also available frozen" aria-label="Also available frozen"><svg class="ico"><use href="#i-snow"/></svg></span></li></ul>
       <p class="items-foot">Prepared in an ISO-standard, FSSAI-compliant facility with no preservatives, emulsifiers or artificial additives. Minimum quantities and rates are shared with each menu.</p>
     </div>
   </div>
